@@ -16,9 +16,16 @@ use App\Http\Controllers\Admin\AuthorController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-
+// rotte pubbliche
 Route::get('/', [PageController::class, 'index'])->name('home');
-//
+Route::get('/elenco-posts', [PageController::class, 'posts'])->name('posts');
+Route::get('/contacts', [PageController::class, 'contacts'])->name('contacts');
+Route::get('/dettaglio-post', [PageController::class, 'detail'])->name('detail');
+
+
+
+
+//rotte protette
 // raggruppare le rotte
 Route::middleware(['auth','verified'])
 ->name('admin.')
